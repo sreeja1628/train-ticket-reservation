@@ -29,7 +29,6 @@ jobs:
           name: war-file
           path: target/*.war
 
-
   deploy-DEV:
     needs: build
     runs-on: ubuntu-latest
@@ -51,9 +50,8 @@ jobs:
           curl -u "$USER:$PASS" --fail -T "$WAR_FILE" \
             "$URL/deploy?path=/train-ticket-reservation&update=true"
 
-
-     deploy-TEST:
-     needs: build
+  deploy-TEST:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
