@@ -71,11 +71,11 @@ jobs:
           curl -u "$USER:$PASS" --fail -T "$WAR_FILE" \
             "$URL/deploy?path=/train-ticket-reservation&update=true"
 
-    deploy-PRE_PROD:
-      needs: build
-      runs-on: ubuntu-latest
+  deploy-PRE_PROD:
+    needs: build
+    runs-on: ubuntu-latest
 
-      steps:
+    steps:
       - name: Download WAR artifact
         uses: actions/download-artifact@v4
         with:
@@ -92,7 +92,7 @@ jobs:
           curl -u "$USER:$PASS" --fail -T "$WAR_FILE" \
             "$URL/deploy?path=/train-ticket-reservation&update=true"
 
-       deploy-PROD:
+  deploy-PROD:
     needs: build
     runs-on: ubuntu-latest
 
@@ -112,5 +112,3 @@ jobs:
           echo "Deploying $WAR_FILE to PROD ($URL)"
           curl -u "$USER:$PASS" --fail -T "$WAR_FILE" \
             "$URL/deploy?path=/train-ticket-reservation&update=true"
-
-
