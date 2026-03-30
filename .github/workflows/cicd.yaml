@@ -32,12 +32,7 @@ jobs:
           name: war-file
           path: ${{ env.WAR_FILE }}
 
-      - name: SonarQube Analysis
-        run: |
-         mvn sonar:sonar \
-         -Dsonar.projectKey=train-ticket-reservation \
-         -Dsonar.host.url=${{ secrets.SONAR_HOST}} \
-         -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+     
             
 
 
