@@ -106,3 +106,4 @@ jobs:
 
         curl -u "$USER:$PASS" --fail -T "$WAR_FILE" \
           "$URL/deploy?path=/train-ticket-reservation&update=true"
+          
